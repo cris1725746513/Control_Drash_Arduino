@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+  font-family: 'Poppins',sans-serif;
+}
+
+:root {
+  --font_color: #4d4d4d;
+  --href_font_color: #898888;
+  --href_background_color: #e6e6e6;
+  --href_background_color_hover: #FFFFFF;
+  --href_font_color_hover: #4d4d4d;
+}
+
+html, body { height: 100%; }
+
+.content {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pagetitle
+{
+ color: #410505e7;
+ font-size: 15px;
+ text-transform: uppercase;
+
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.th.mat-header-cell {
+  text-align: center !important;
+}
+
+.mat-raised-button
+{
+background-color: #006e63;
+color: #ffffff;
+
+}
+
+.button-cancelar
+{
+background-color: #bcdedb;
+color: #000000;
+}
+.mat-raised-button:hover
+{
+background-color: #f6f6f6;
+color: #ebb300;
+}
+.mat-paginator-container {
+  background-color: #706E6E !important;
+  padding-top: 30px !important;
+  min-height: 25px !important;
+  height: 14px !important;
+  font-size: 12px !important;
+}
+
+.mat-tooltip {
+  max-width: 100% !important;
+  overflow:visible !important;
+  font-size: 14px;
+
+}
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+  background: #D4D4D4;
+  font-weight: bold;
+}
+
+.highlight{
+  background: #004D56; /* green */
+  font-weight: bold;
+  color: #E9AF0F !important;
+}
+
+.cabecerasTablas{
+  text-align: left;
+  font-weight: bold;
+  color: #000000;
+  background-color: #A7A7A7;
+   font-size: 14px;
+   font-family: 'Poppins',sans-serif !important;
+}
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+.negritas{
+ font-weight: bold;
+}
+
+.pagetitle{
+  font-weight: bold;
+  font-size: 20px;
+}

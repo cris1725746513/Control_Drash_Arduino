@@ -1,0 +1,89 @@
+.navbar{
+  color:#ffffff;
+  height: fit-content;
+  width: 100%;
+  display: block;
+  font-family: 'Poppins',sans-serif;
+  background-color: #09477a;
+  font-size: 11px;
+}
+.menu{
+   background-color: #035764;
+   height: fit-content;
+}
+header img{
+  float:right;
+  width: 200px;
+  height: 150px;
+
+}
+
+
+a {
+  color: #f6f6f6 !important;
+}
+
+a:hover {
+  color: #ebb300 !important;
+}
+
+@media screen and (max-width:700px){
+  .navbar .container-fluid{
+     flex-direction: column;
+  }
+}
+
+.mat-icon {
+  font-size: 30px;
+  height: 30px;
+  width: 40px;
+  overflow: hidden;
+}
+.hr{
+  background-color: #f6f6f6 !important;
+}
+button{
+  color: #f6f6f6 !important;
+  background-color: #035764 !important;
+  vertical-align: text-top !important;
+  border: #064650;
+  font-family: 'Poppins',sans-serif !important;
+  font-size: 12px !important;
+}
+.button{
+  color: #f6f6f6 !important;
+  background-color: #035764 !important;
+  vertical-align: text-top !important;
+  border: #064650;
+  font-family: 'Poppins',sans-serif !important;
+  font-size: 12px !important;
+  height: 22px;
+}
+
+.iMenu{
+  vertical-align: -15px !important;
+  font-size: 20px !important;
+}
+button:hover {
+  color: #ebb300 !important;
+  background-color: #ffffff !important;
+  border-radius: 5px;
+
+}
+.sub{
+  color: #064650 !important;
+  background-color: #ffffff !important;
+  vertical-align: middle !important;
+  border: #064650;
+}
+.sub:hover {
+  color: #ffffff !important;
+  background-color: #ebb300 !important;
+}
+
+::ng-deep .placeholder2 {
+ display: none;
+}
+
+
+

@@ -1,9 +1,5 @@
 <app-home></app-home>
 <div class="content" fxFlex>
-  <div class="example-action-buttons">
-    <button mat-button (click)="accordion.openAll()">Expand All</button>
-    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
-  </div>
   <mat-accordion class="example-headers-align" multi>
     <mat-expansion-panel *ngFor="let container of containers; let i = index">
       <mat-expansion-panel-header>
@@ -32,7 +28,7 @@
                 <div class="row">
                   <div class="col">
                     <mat-label><span style="font-weight: bold;">Resultado</span>&nbsp; valores</mat-label><br><br>
-                    <mat-label><span style="font-weight: bold;">Ultimo Control</span>&nbsp; {{container.dateTop.fecha1}}</mat-label><br>
+                    <mat-label><span style="font-weight: bold;">Ultimo Control</span>&nbsp; {{container.datetop.fecha1}}</mat-label><br>
                   </div>
                   <div class="col">
                     <mat-form-field appearance="fill">
@@ -44,7 +40,7 @@
                       <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                       <mat-date-range-picker #picker></mat-date-range-picker>
-
+                      
                       <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
                       <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
                     </mat-form-field>

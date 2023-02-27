@@ -19,15 +19,18 @@ export class FirbeaseComponent implements OnInit {
     end: new FormControl<Date | null>(null),
   });
   containers?: any[];
+  horas!: any[];
+  niveles!: any[];
+  ultimoControl !: String;
   apiLoaded!: Observable<boolean>;
   currentTutorial?: any;
   currentIndex = -1;
   title = '';
-  center = {lat: -1.03578, lng: -79.453227};
+  center : any;
   zoom = 15;
   display?: google.maps.LatLngLiteral;
   markerOptions: google.maps.MarkerOptions = {draggable: false};
-  markerPositions: google.maps.LatLngLiteral[] = [this.center];
+  markerPositions!: google.maps.LatLngLiteral[] ;
   verMapa:boolean=false;
   constructor(private firestoreService: FirestoreService, private httpClient: HttpClient
   ) {
@@ -54,8 +57,12 @@ retrieveTutorials(): void {
   ).subscribe(data => {
 
     this.containers = data;
+    var contenedor = this.containers![0]
+    console.log(contenedor.latitud)
+    this.center = {lat: contenedor.latitud, lng: contenedor.longitud};
+    this.markerPositions= [this.center];
 
-    this.numeroDias()
+    this.historial()
   });
 }
 
@@ -74,21 +81,31 @@ changeStateNewTask(){
   this.verMapa=!this.verMapa;
  }
 
- numeroDias(){
-  console.log(this.containers)
-  var fechaInicio = new Date('02-01-2023').getTime();
-var fechaFin    = new Date('02-03-2023').getTime();
-var diff = fechaFin - fechaInicio;
+ historial(){
 
-console.log(diff/(1000*60*60*24) );
+    var contenedor = this.containers![0]
+    console.log(contenedor.dateTop.fecha1);
+
+//contenedor.dateTop.fecha1
+this.horas=[this.retunDatefrondLong(contenedor.dateTop.fecha1)
+  ,this.retunDatefrondLong(contenedor.dateTop.fecha2)
+  ,this.retunDatefrondLong(contenedor.dateTop.fecha3)
+  ,this.retunDatefrondLong(contenedor.dateTop.fecha4)]
+
+  this.ultimoControl = new Date(contenedor.dateTop.fecha4).toUTCString();
+this.niveles =[contenedor.dateTop.nivel1
+,contenedor.dateTop.nivel2
+,contenedor.dateTop.nivel3
+,contenedor.dateTop.nivel4]
  }
 
+
+ retunDatefrondLong(miliseg:any):String{
+  var h =new Date(miliseg).toDateString();
+  var m =new Date(miliseg).getMinutes();
+  var s =new Date(miliseg).getSeconds();
+  return h;
+}
+
  }
 
-
-
-
- /*
- [class.active]="i == currentIndex"
-          (click)="setActiveTutorial(container, i)" >
- */
